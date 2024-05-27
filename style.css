@@ -1,11 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+body {
+    height: 100vh;
+}
+
+
+/* Header */
+
 header {
     background-color: white;
-    height: 20px;
+    height: 75px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
 }
+
+ header .icone-header {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+#perfil-icon {
+    margin-top: 10px;
+}
+
+#menu-sandwich-icon {
+    font-weight: lighter;
+}
+
+
+/* Mapa CPTM */
+
+.mapaCPTM {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Fim header */
 
 .planejeSuaViagem {
     background-color: #A7A7A7;
-    padding: 10px;
+    margin-bottom: 10px;
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #bPlanejeSuaViagem {
@@ -28,20 +77,52 @@ header {
 }
 
 .grayButton {
-    background-color: #D9D9D9;
     color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.contatos {
+.contatosPai {
+    height: 100px;
+    background-color: #FF0000;
+}
+
+.contatosTelefones {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.contatosNomes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
 }
 
 .logos {
     display: flex;
+    flex-direction:  row;
+    
 }
+
+.logos svg {
+    margin-left: 10px;
+}
+
+
+/* Footer */
 
 footer {
     background-color: #A7A7A7;
     color: #000000;
     text-align: center;
 }
+
+
+
+
+/* Fim footer */
