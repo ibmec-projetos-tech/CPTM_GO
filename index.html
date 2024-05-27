@@ -59,8 +59,46 @@
             
     </div>
 
+    <div class="popUp hidden">
 
-    <div class="contatosPai">
+        <h2 style="display: flex; justify-content: center; align-items: center;">Entre em contato</h2>
+
+        <div style="display: flex; flex-direction: rows; margin-left: 5%; margin-top: 5%;">
+            <h3 style="margin-right: 5%;">Name:</h3>
+            <form>
+                <input type="text" name="name" placeholder="Name">
+            </form>
+        </div>
+
+        <div style="display: flex; flex-direction: rows; margin-left: 5%; margin-top: 5%;">
+            <h3 style="margin-right: 5%;">Email:</h3>
+            <form>
+                <input type="text" name="email" placeholder="Email">
+            </form>
+        </div>
+
+        <div style="display: flex; flex-direction: rows; margin-left: 5%; margin-top: 5%;">
+            <h3 style="margin-right: 5%;">Telefone:</h3>
+            <form>
+                <input type="text" name="telefone" placeholder="Telefone">
+            </form>
+        </div>
+
+        <div style="display: flex; flex-direction: column; margin-left: 5%; margin-top: 5%; justify-content: center; align-items: center;">
+            <h3 style="margin-right: 5%;">Sua mensagem:</h3>
+            <form style="margin-top: 2%;">
+                <textarea name="mensagem" placeholder="Mensagem" style="width: 300px; height: 75px; "></textarea>
+            </form>
+        </div>
+
+        <div style="display: flex; flex-direction: column;">
+            <button style="display: flex; justify-content: center; align-items: center; margin-left: 15%; margin-right: 10%; background-color: red; color: white;"> Enviar </button>
+        </div>
+        
+    </div>
+
+
+    <div id="popUpAction" class="contatosPai">
 
         <div class="contatosTelefones">
             <ol>0800 055 0121</ol>
@@ -104,4 +142,15 @@
         <h6>Copyright © CPTM Companhia Paulista de Trens Metropolitanos 2015 - 2023</h6>
     </footer>
 </body>
+
+<script>
+    const popUp = document.querySelector('.popUp');
+    const popUpAction = document.querySelector('#popUpAction');
+
+    popUpAction.addEventListener('click', () => {
+        popUp.classList.toggle('hidden');
+    });
+
+</script>
+
 </html>

@@ -100,7 +100,35 @@
         </ol>
     </div>
 
-    <div class="contatosPai">
+    <div class="popUp hidden">
+
+        <h2 style="display: flex; justify-content: center; align-items: center;">Informações Estação {estacao}</h2>
+
+        <div style="display: flex; flex-direction: rows; margin-left: 5%; margin-top: 5%;">
+            <h3 style="margin-right: 5%;">Horário Previsto:</h3>
+            <h3>15:30</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: rows; margin-left: 5%; margin-top: 5%;">
+            <h3 style="margin-right: 5%;">Acessibilidade:</h3>
+            <h3>Cadeirante, Cego, Surdo</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: rows; margin-left: 5%; margin-top: 5%;">
+            <h3 style="margin-right: 5%;">Pets:</h3>
+            <h3>Permitido</h3>
+        </div>
+
+        <div style="display: flex; flex-direction: rows; margin-left: 5%; margin-top: 5%;">
+            <h3 style="margin-right: 5%;">Tarifa:</h3>
+            <h3>R$5,00</h3>
+        </div>
+
+
+        
+    </div>
+
+    <div id="popUpAction" class="contatosPai">
 
         <div class="contatosTelefones">
             <ol>0800 055 0121</ol>
@@ -144,4 +172,15 @@
         <h6>Copyright © CPTM Companhia Paulista de Trens Metropolitanos 2015 - 2023</h6>
     </footer>
 </body>
+
+<script>
+    const popUp = document.querySelector('.popUp');
+    const popUpAction = document.querySelector('#popUpAction');
+
+    popUpAction.addEventListener('click', () => {
+        popUp.classList.toggle('hidden');
+    });
+
+</script>
+
 </html>
