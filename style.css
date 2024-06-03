@@ -3,6 +3,9 @@
     padding: 0;
     
 }
+body {
+    font-family: 'poppins', sans-serif;
+}
 
 /* Header */
 
@@ -249,6 +252,8 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
 }
 
@@ -256,6 +261,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .conteudoRecentes {
@@ -265,12 +271,32 @@ footer {
     justify-content: space-between;
 }
 
+.estacao, .recentes{
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100vw;
+   
+}
+
+.ultima-estacao {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.icone img {
+    width: 25px;
+    height: 25px;
+    margin-left: 10px;
+
+}
+
 .estacao  .linha {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: lightgrey;
+    
 }
 
 .estacaoPlanejeSuaViagem {
