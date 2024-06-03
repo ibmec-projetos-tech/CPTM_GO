@@ -174,6 +174,9 @@
         <div style="display: flex; flex-direction: column;">
             <button style="display: flex; justify-content: center; align-items: center; margin-left: 15%; margin-right: 10%; background-color: red; color: white;"> Enviar </button>
         </div>
+
+
+        <button class="bVermelho" id="popUpEstacao6">Fechar</button>
         
     </div>
     
@@ -236,6 +239,12 @@
         popUp.classList.toggle('hidden');
     });
 
+    const popUpAction7 = document.querySelector('#popUpEstacao6');
+
+    popUpAction7.addEventListener('click', () => {
+        popUp.classList.toggle('hidden');
+    });
+
     const popUp2 = document.querySelector('.popUp2');
     const popUpAction2 = document.querySelector('#popUpEstacao');
 
@@ -268,6 +277,8 @@
     popUpAction6.addEventListener('click', () => {
         popUp2.classList.toggle('hidden');
     });
+
+
 
 </script>
 
