@@ -4,11 +4,6 @@
     
 }
 
-body {
-    
-}
-
-
 /* Header */
 
 header {
@@ -33,7 +28,43 @@ header {
     font-weight: lighter;
 }
 
+.menu {
+    list-style:none;
+    border:1px solid #c0c0c0;
+    float:left;
+}
 
+.menu li{
+    position:relative;
+    float:left;
+    border-right:1px solid #c0c0c0;
+}
+
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+
+.menu li a:hover{
+    background:#333;
+    color:#fff;
+    -moz-box-shadow:0 3px 10px 0 #CCC;
+    -webkit-box-shadow:0 3px 10px 0 #ccc;
+    text-shadow:0px 0px 5px #fff;
+}
+
+.menu li  ul{
+    position:absolute;
+    top:25px;
+    left:0;
+    background-color:#fff;
+    display:none;
+}
+
+.menu li:hover ul, .menu li.over ul{display:block;}
+
+.menu li ul li{
+    border:1px solid #c0c0c0;
+    display:block;
+    width:150px;
+}
 /* Mapa CPTM */
 
 .mapaCPTM {
@@ -112,6 +143,19 @@ header {
 }
 
 #bPlanejeSuaViagem {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    border: none;
+    width: 90vw;
+    height: 30px;
+}
+
+.bVermelho {
     background-color: #FF0000;
     color: #FFFFFF;
     margin: 5px;
@@ -238,6 +282,18 @@ footer {
 }
 
 .popUp {
+    width: 400px;
+    height: 350px;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.popUp2 {
     width: 400px;
     height: 350px;
     background-color: #f0f0f0;
