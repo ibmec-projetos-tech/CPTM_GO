@@ -167,7 +167,7 @@ header {
     font-size: large;
     font-weight: bold;
     border: none;
-    width: 90vw;
+    width: 75vw;
     height: 30px;
 }
 
@@ -336,3 +336,34 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+
+.popUp2 {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.popUp2 h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.popUp2 div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.popUp2 h3:first-child {
+    color: #666;
+}
+
+.popUp2 h3:last-child {
+    color: #333;
+}
+
