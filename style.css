@@ -1,369 +1,282 @@
-* {
-    margin: 0;
-    padding: 0;
-    
-}
 body {
     font-family: 'poppins', sans-serif;
 }
 
-/* Header */
-
+/* INÍCIO INDEX.HTML */
+/* Início header */
 header {
     background-color: white;
-    height: 75px;
+    height: 10vh;
     width: 100vw;
     display: flex;
     justify-content: space-between;
 }
 
- header .icone-header {
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 5px;
+#logoCPTM {
+    margin: 1vh;
 }
 
-#perfil-icon {
-    margin-top: 10px;
+#menuSandwich {
+    margin: 1vh;
+    transform: scale(0.8);
 }
 
-#menu-sandwich-icon {
-    font-weight: lighter;
+#perfil {
+    margin: 1vh;
 }
-
-.menu {
-    list-style:none;
-    border:1px solid #c0c0c0;
-    float:left;
-}
-
-.menu li{
-    position:relative;
-    float:left;
-    border-right:1px solid #c0c0c0;
-}
-
-.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
-
-.menu li a:hover{
-    background:#333;
-    color:#fff;
-    -moz-box-shadow:0 3px 10px 0 #CCC;
-    -webkit-box-shadow:0 3px 10px 0 #ccc;
-    text-shadow:0px 0px 5px #fff;
-}
-
-.menu li  ul{
-    position:absolute;
-    top:25px;
-    left:0;
-    background-color:#fff;
-    display:none;
-}
-
-.menu li:hover ul, .menu li.over ul{display:block;}
-
-.menu li ul li{
-    border:1px solid #c0c0c0;
-    display:block;
-    width:150px;
-}
-/* Mapa CPTM */
-
-.mapaCPTM {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-
 /* Fim header */
 
-.planejeSuaViagem {
+/* Início menu Planeje Sua Viagem */
+.menuPlanejeSuaViagem {
     background-color: #A7A7A7;
-    margin-bottom: 10px;
+    height: 30vh;
     width: 100vw;
-    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.boxPlanejeSuaViagem {
+.containerPlanejeSuaViagem {
+    background-color: white;
+    height: 10vh;
+    width: 90vw;
+    border-radius: 15px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    width: 90vw;
-    height: 100px;
-    border-radius: 10px;
-    
-}
-
-.boxPlanejeSuaViagem button {
-    margin: 15px;
-    border: none;
-}
-
-.planejeSuaViagem img {
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-right: 10px;
-
-}
-
-.bOrigensDestino button {
-    font-weight: bold;
-    margin-left: 25px;
-}
-
-.linhaCinza {
-    border: none;
-    height: 1px;
-    background-color: gray;
-    
-    width: 60vw;
-    margin-left: 25px;
-}
-
-#bPartida {
-    border-radius: 10px;
-    background-color: transparent;
-    color: white;
-    border-color: white;
-    margin: 10px;
-}
-
-.dateIcon {
-    margin-left: 10px;
-    color: white;
-    width: 20px;
-    height: 20px;
-}
-
-#bPlanejeSuaViagem {
-    background-color: #FF0000;
-    color: #FFFFFF;
-    margin: 5px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-    border: none;
-    width: 90vw;
-    height: 30px;
-}
-
-.bVermelho {
-    background-color: #FF0000;
-    color: #FFFFFF;
-    margin: 5px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
-    border: none;
-    width: 75vw;
-    height: 30px;
 }
 
 .whiteButton {
-    background-color: #FFFFFF;
-    border-radius: 5px;
+    width: 88vw;
+    font-size: 2vh;
+    font-weight: bold;
+}
+
+/* TODO: estilização da seleção das estações */
+
+.dateButton {
+    margin: 2vh;
+    border: 0;
+    border-radius: 10px;
+}
+
+.redButton {
+    background-color: #FF0000;
+    color: white;
+    width: 90vw;
+    border-radius: 10px;
+    font-size: 3vh;
+    border: 0;
+    margin: 1vh;
+    font-weight: bold;
+}
+/* Fim menu Planeje Sua Viagem */
+
+/* Início menu Informações Sobre Estações */
+.containerInformacoesSobreEstacoes {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 20vh;
+    margin-left: 50vh;
+    margin-right: 50vh;
 }
 
-.mapaCPTM {
+.popupInformacoesEstacoes {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    width: 35vh;
+    height: 30vh;
+    background-color: #A7A7A7;
+    border-radius: 10px;
+    padding: 1vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.redContainer {
+    background-color: #FF0000;
+    color: white;
+    width: 35vh;
+    border-radius: 10px;
+    font-size: 3vh;
+    border: 0;
+    margin-bottom: 1vh;
+    margin-top: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.whiteContainer {
+    background-color: white;
+    width: 35vh;
+    border-radius: 10px;
+    height: 3vh;
+    margin: 1vh;
+    font-size: 14px;
     display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.grayButton {
-    color: #000000;
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+/* Fim menu Informações Sobre Estações */
+
+/* Início mapa CPTM */
+.mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    width: auto;
+    margin-bottom: 5vh;
+}
+/* Fim mapa CPTM */
+
+/* Início contatos */
+.containerContatos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    margin-left: 35vh;
+    margin-right: 35vh;
+    margin-bottom: 3vh;
+}
+
+h5 {
+    font-size: 24px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+h6 {
+    font-size: 16px;
+    margin: 10px;
+    font-weight: 500;
+}
+/* Fim contatos */
+
+/* Início redes sociais */
+.redesSociais {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 35vh;
+    margin-right: 35vh;
+    margin-bottom: 3vh;
+}
+/* Fim sociais */
+
+/* Início botão entre em contato */
+.contactButton {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.contatosPai {
-    height: 100px;
-    background-color: white;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.contatosTelefones {
-    display: flex;
+.popupEntreEmContato {
+    position: fixed;
+    top: 50%;
+    left: 40%;
+    width: 35vh;
+    height: 40vh;
+    background-color: #A7A7A7;
+    border-radius: 10px;
+    padding: 1vh;
+    padding-top: 0;
+    display: none;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    font-weight: bold;
-    font-size: 16px;
-    margin-top: 5px;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.contatosNomes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: lighter;
-    letter-spacing: 2px;
-    text-wrap: wrap;
-    text-align: left;
+.formulario {
+    height: 3vh;
+    margin: 1vh;
 }
 
-.logos {
-    display: flex;
-    flex-direction:  row;
-    
+input {
+    border-radius: 10px;
+    height: 3vh;
+    width: 34vh;
 }
 
-.logos svg {
-    margin-top: 20px;
-    margin-left: 10px;
+#mensagem {
+    height: 7vh;
 }
 
+#enviar {
+    width: 10vh;
+    position: absolute;
+    bottom: 10px;
+    margin-bottom: 0;
+}
 
-/* Footer */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+/* Fim botão entre em contato */
 
 footer {
     background-color: #A7A7A7;
-    color: #000000;
     text-align: center;
-    font-weight: lighter;
 }
+/* FIM INDEX.HTML */
 
-
-/* Fim footer */
-
-
-/* indexEstacoes */
+/* INÍCIO INDEXINFORMAÇÕES.HTML */
+/* Início Estações */
+.estacoes {
+    width: 90vw;
+    margin-left: 5vh;
+    margin-right: 5vh;
+    margin-top: 5vh;
+    border-radius: 10px;
+    background-color: #A7A7A7;
+}
 
 .recentes {
-    background-color: #A7A7A7;
-    width: 100vw;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-
-}
-
-.recentes-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-.conteudoRecentes {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.estacao, .recentes{
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 100vw;
-   
-}
-
-.ultima-estacao {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
-
-.icone img {
-    width: 25px;
-    height: 25px;
-    margin-left: 10px;
-
-}
-
-.estacao  .linha {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: lightgrey;
-    
-}
-
-.estacaoPlanejeSuaViagem {
-    background-color: #FF0000;
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hidden {
-    display: none;
-}
-
-.popUp {
-    width: 400px;
-    height: 350px;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.popUp2 {
-    width: 400px;
-    height: 350px;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-
-.popUp2 {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    margin: 0 auto;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.popUp2 h2 {
     text-align: center;
-    color: #333;
-    margin-bottom: 20px;
 }
 
-.popUp2 div {
+table {
+    /* border-collapse: collapse; */
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5vh;
 }
 
-.popUp2 h3:first-child {
-    color: #666;
+tr, td {
+    text-align: left;
+    width: 100vh;
+    text-align: center;
 }
 
-.popUp2 h3:last-child {
-    color: #333;
+thead tr {
+    background-color: #A7A7A7;
 }
 
+tbody td {
+    background-color: white;
+}
+
+#iconeEstacao {
+    transform: scale(0.5);
+}
+
+/* Fim Estações */
+/* FIM INDEXINFORMAÇÕES.HTML */
