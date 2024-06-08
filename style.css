@@ -1,5 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}	
+
 body {
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* INÍCIO INDEX.HTML */
@@ -7,22 +13,28 @@ body {
 header {
     background-color: white;
     height: 10vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 #logoCPTM {
     margin: 1vh;
+    width: 150px;
+    height: auto;
 }
 
 #menuSandwich {
     margin: 1vh;
     transform: scale(0.8);
+    width: 70px;
+    height: auto;
 }
 
 #perfil {
     margin: 1vh;
+    width: 50px;
+    height: auto;
 }
 /* Fim header */
 
@@ -30,7 +42,7 @@ header {
 .menuPlanejeSuaViagem {
     background-color: #A7A7A7;
     height: 30vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +52,7 @@ header {
 .containerPlanejeSuaViagem {
     background-color: white;
     height: 10vh;
-    width: 90vw;
+    width: 90%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -49,17 +61,22 @@ header {
 }
 
 .whiteButton {
-    width: 88vw;
+    width: 88%;
     font-size: 2vh;
     font-weight: bold;
+    margin-right: 20vw;
+    
 }
 
-/* TODO: estilização da seleção das estações */
+.conteinerOrigem {
+    margin-bottom: 2vh;
+}
 
 .dateButton {
     margin: 2vh;
     border: 0;
     border-radius: 10px;
+    width: 90%;
 }
 
 .redButton {
@@ -81,15 +98,22 @@ header {
     justify-content: center;
     flex-direction: column;
     height: 20vh;
-    margin-left: 50vh;
-    margin-right: 50vh;
+    margin: 0 10%;
+}
+
+#infoEstacoesLabel {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
 }
 
 .popupInformacoesEstacoes {
     position: fixed;
     top: 50%;
-    left: 40%;
-    width: 35vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
     height: 30vh;
     background-color: #A7A7A7;
     border-radius: 10px;
@@ -103,7 +127,7 @@ header {
 .redContainer {
     background-color: #FF0000;
     color: white;
-    width: 35vh;
+    width: 100%;
     border-radius: 10px;
     font-size: 3vh;
     border: 0;
@@ -115,7 +139,7 @@ header {
 
 .whiteContainer {
     background-color: white;
-    width: 35vh;
+    width: 100%;
     border-radius: 10px;
     height: 3vh;
     margin: 1vh;
@@ -138,10 +162,16 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-    width: auto;
+    width: 100vw;
     margin-bottom: 5vh;
+    margin-top: 5vh;
 }
+
+.mapa img {
+    width: 100vw;
+    height: auto;
+}
+
 /* Fim mapa CPTM */
 
 /* Início contatos */
@@ -150,20 +180,18 @@ header {
     align-items: center;
     justify-content: space-between;
     text-align: center;
-    margin-left: 35vh;
-    margin-right: 35vh;
+    margin: 0 10%;
     margin-bottom: 3vh;
 }
 
 h5 {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bolder;
     text-align: center;
-    /* margin: 0; */
 }
 
 h6 {
-    font-size: 16px;
+    font-size: 1rem;
     margin: 10px;
     font-weight: 500;
 }
@@ -174,11 +202,10 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 35vh;
-    margin-right: 35vh;
+    margin: 0 10%;
     margin-bottom: 3vh;
 }
-/* Fim sociais */
+/* Fim redes sociais */
 
 /* Início botão entre em contato */
 .contactButton {
@@ -190,8 +217,10 @@ h6 {
 .popupEntreEmContato {
     position: fixed;
     top: 50%;
-    left: 40%;
-    width: 35vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
     height: 40vh;
     background-color: #A7A7A7;
     border-radius: 10px;
@@ -211,7 +240,7 @@ h6 {
 input {
     border-radius: 10px;
     height: 3vh;
-    width: 34vh;
+    width: 100%;
 }
 
 #mensagem {
@@ -241,10 +270,8 @@ footer {
 /* INÍCIO INDEXINFORMAÇÕES.HTML */
 /* Início Estações */
 .estacoes {
-    width: 90vw;
-    margin-left: 5vh;
-    margin-right: 5vh;
-    margin-top: 5vh;
+    width: 90%;
+    margin: 5vh auto;
     border-radius: 10px;
     background-color: #A7A7A7;
 }
@@ -257,7 +284,6 @@ footer {
 }
 
 table {
-    /* border-collapse: collapse; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -265,9 +291,8 @@ table {
 }
 
 tr, td {
-    text-align: left;
-    width: 100vh;
     text-align: center;
+    width: 100%;
 }
 
 thead tr {
@@ -282,6 +307,17 @@ tbody td {
 #iconeEstacao {
     transform: scale(0.5);
 }
-
 /* Fim Estações */
 /* FIM INDEXINFORMAÇÕES.HTML */
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .containerInformacoesSobreEstacoes {
+        margin: 0 5%;
+    }
+
+    .containerContatos {
+        flex-direction: column;
+        margin: 5%;
+    }
+}

@@ -28,18 +28,23 @@
     <!-- Início menu Planeje Sua Viagem -->
     <div class="menuPlanejeSuaViagem">
         <div class="containerPlanejeSuaViagem">
-            <label class="whiteButton">Origem:</label>
-                <select>
-                    <option value="estacao1">São Paulo - Morumbi</option>
-                    <option value="estacao2">Butantã</option>
-                    <option value="estacao3">Faria Lima</option>
-                </select>
-            <label class="whiteButton">Destino:</label>
+            <div class="conteinerOrigem">
+                <label class="whiteButton">Origem:</label>
+                    <select>
+                        <option value="estacao1">São Paulo - Morumbi</option>
+                        <option value="estacao2">Butantã</option>
+                        <option value="estacao3">Faria Lima</option>
+                    </select>
+            </div>
+            <div class="conteinerDestino">
+                <label class="whiteButton">Destino:</label>
             <select>
                 <option value="estacao1">São Paulo - Morumbi</option>
                 <option value="estacao2">Butantã</option>
                 <option value="estacao3">Faria Lima</option>
             </select>
+            </div>
+            
         </div>
 
         <!-- Menu de datas -->
@@ -55,7 +60,7 @@
 
     <!-- Início menu Informações Sobre Estações -->
     <div class="containerInformacoesSobreEstacoes">
-        <label class="whiteButton">Informações Sobre Estações:</label>
+        <label id="infoEstacoesLabel" class="whiteButton">Informações Sobre Estações:</label>
         <select>
             <option value="estacao1">São Paulo - Morumbi</option>
             <option value="estacao2">Butantã</option>
