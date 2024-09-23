@@ -38,7 +38,7 @@ Testes Unitários
 Base de Dados
 
 Será utilizada uma base de dados simples em JSON para armazenar informações sobre as estações, suas respectivas linhas, status e horários de funcionamento. Exemplo de estrutura:
-
+```javascript
 {
   "estacoes": [
     {
@@ -115,7 +115,7 @@ Será utilizada uma base de dados simples em JSON para armazenar informações s
     }
   ]
 }
-
+```
 Integração com API
 
 	•	Google Maps API: Para visualização de rotas e fornecimento de serviços baseados em geolocalização para os usuários.
