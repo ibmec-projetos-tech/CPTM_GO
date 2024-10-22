@@ -28,20 +28,20 @@
     <!-- Início menu Planeje Sua Viagem -->
     <div class="menuPlanejeSuaViagem">
         <div class="containerPlanejeSuaViagem">
-            <div class="conteinerOrigem">
+            <div class="conteinerOrigem" id="conteinerOrigem">
                 <label class="whiteButton">Origem:</label>
                     <select>
-                        <option value="estacao1">São Paulo - Morumbi</option>
+                        <!-- <option value="estacao1">São Paulo - Morumbi</option>
                         <option value="estacao2">Butantã</option>
-                        <option value="estacao3">Faria Lima</option>
+                        <option value="estacao3">Faria Lima</option> -->
                     </select>
             </div>
-            <div class="conteinerDestino">
+            <div class="conteinerDestino" id="conteinerDestino">
                 <label class="whiteButton">Destino:</label>
             <select>
-                <option value="estacao1">São Paulo - Morumbi</option>
+                <!-- <option value="estacao1">São Paulo - Morumbi</option>
                 <option value="estacao2">Butantã</option>
-                <option value="estacao3">Faria Lima</option>
+                <option value="estacao3">Faria Lima</option> -->
             </select>
             </div>
             
@@ -61,20 +61,21 @@
     <!-- Início menu Informações Sobre Estações -->
     <div class="containerInformacoesSobreEstacoes">
         <label id="infoEstacoesLabel" class="whiteButton">Informações Sobre Estações:</label>
-        <select>
+        <select id="selectEstacoes"></select>
+        <!-- <select>
             <option value="estacao1">São Paulo - Morumbi</option>
             <option value="estacao2">Butantã</option>
             <option value="estacao3">Faria Lima</option>
-        </select>
+        </select> -->
         <button class="redButton" id="consulte">Consulte</button>
     </div>
-    <div class="popupInformacoesEstacoes">
+    <div class="popupInformacoesEstacoes" id="popupEstacao">
         <span class="close">&times;</span>
-        <div class="redContainer">Estação Faria Lima</div>
-        <div class="whiteContainer">Horário Previsto: 15h20</div>
-        <div class="whiteContainer">Possui Acessibilidade: Sim</div>
-        <div class="whiteContainer">Permite Pets: Não</div>
-        <div class="whiteContainer">Tarifa: R$ 5,00</div>
+        <div class="redContainer" id="nomeEstacao"></div>
+        <div class="whiteContainer" id="horarioEstacao"></div>
+        <div class="whiteContainer" id="acessibilidadeEstacao"></div>
+        <div class="whiteContainer" id="animaisEstacao"></div>
+        <div class="whiteContainer" id="tarifaEstacao"></div>
     </div>
     <!-- Fim menu Informações Sobre Estações -->
 
@@ -151,6 +152,9 @@
         <h6>Copyright © CPTM Companhia Paulista de Trens Metropolitanos 2015 - 2023</h6>
     </footer>
     <!-- Fim footer -->
+    
+    <!-- Importando o script ao final do body -->
+    <script type="module" src="./script.js"></script>
 </body>
 <script src="script.js"></script>
 </html>
