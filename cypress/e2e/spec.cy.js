@@ -16,4 +16,12 @@ describe('Teste de Consulta de Estações', () => {
       ]
     }).as('estacoesRequest');
   });
+  
+  it('Deve exibir apenas a estação consultada', () => {
+    cy.intercept('GET', 'https://127.0.0.1:8000/api/v1/estacoes/0', {
+      body: [
+        { nome: "São Paulo - Morumbi", status: "Aberta", horario: "10:00", acessibilidade: true, permiteAnimais: false, tarifa: 5.0 }
+      ]
+    }).as('idEstacaoRequest');
+  });
 });
