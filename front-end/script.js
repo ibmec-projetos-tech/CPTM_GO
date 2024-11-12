@@ -1,65 +1,31 @@
-import { estacoes } from './data.js';
+document.addEventListener('DOMContentLoaded', function () {
+    const selectOrigem = document.getElementById('selectOrigem');
+    const selectDestino = document.getElementById('selectDestino');
+    const botaoCalcularRota = document.getElementById('calcularRota');
+    const popupEstacao = document.getElementById('popupEstacao');
+    const nomeEstacao = document.getElementById('nomeEstacao');
+    const horarioEstacao = document.getElementById('horarioEstacao');
+    const acessibilidadeEstacao = document.getElementById('acessibilidadeEstacao');
+    const animaisEstacao = document.getElementById('animaisEstacao');
+    const tarifaEstacao = document.getElementById('tarifaEstacao');
+    const botaoConsulte = document.getElementById('consulte');
 
-// // Função para abrir popup de informações das estações
-// // ao clicar no botão da página principal
-// document.addEventListener('DOMContentLoaded', function() {
-//     var closeButton = document.querySelector('.popupInformacoesEstacoes .close');
-//     var openButton = document.getElementById('consulte');
-//     var popup = document.querySelector('.popupInformacoesEstacoes');
+    // Função para carregar estações
+    async function carregarEstacoes() {
+        try {
+            const response = await fetch('http://localhost:3000/api/estacoes');
+            const estacoes = await response.json();
 
-//     // Abrir popup
-//     openButton.addEventListener('click', function() {
-//         popup.style.display = 'flex';
-//     });
+            preencherSelect(selectOrigem, estacoes);
+            preencherSelect(selectDestino, estacoes);
+            preencherSelect(document.getElementById('selectEstacoes'), estacoes);
+        } catch (error) {
+            console.error('Erro ao carregar estações:', error);
+        }
+    }
 
-//     // Fechar popup
-//     closeButton.addEventListener('click', function() {
-//         popup.style.display = 'none';
-//     });
-// });
-
-// Função para abrir popup de informações das estações
-// ao clicar no ícone de situação das estações na página de rotas
-document.addEventListener('DOMContentLoaded', function() {
-    var closeButton = document.querySelector('.popupInformacoesEstacoes .close');
-    var openButton = document.getElementById('iconeEstacao');
-    var popup = document.querySelector('.popupInformacoesEstacoes');
-
-    // Abrir popup
-    openButton.addEventListener('click', function() {
-        popup.style.display = 'flex';
-    });
-
-    // Fechar popup
-    closeButton.addEventListener('click', function() {
-        popup.style.display = 'none';
-    });
-});
-
-// Função para abrir popup de envio de email
-document.addEventListener('DOMContentLoaded', function() {
-    var closeButton = document.querySelector('.popupEntreEmContato .close');
-    var openButton = document.getElementById('entreEmContato');
-    var popup = document.querySelector('.popupEntreEmContato');
-
-    // Abrir popup
-    openButton.addEventListener('click', function() {
-        popup.style.display = 'flex';
-    });
-
-    // Fechar popup
-    closeButton.addEventListener('click', function() {
-        popup.style.display = 'none';
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    const selectOrigem = document.querySelector('.conteinerOrigem select');
-    const selectDestino = document.querySelector('.conteinerDestino select');
-    const selectInformacoes = document.getElementById('selectEstacoes');
-
-    // Função para adicionar as estações ao select
-    function preencherSelect(selectElement) {
+    // Função para preencher os selects
+    function preencherSelect(selectElement, estacoes) {
         estacoes.forEach(estacao => {
             const option = document.createElement('option');
             option.value = estacao.nome;
@@ -68,63 +34,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Preencher os selects de origem e destino
-    preencherSelect(selectOrigem);
-    preencherSelect(selectDestino);
-    preencherSelect(selectInformacoes);
+    // Função para exibir informações da estação selecionada
+    function abrirPopup(estacao) {
+        nomeEstacao.textContent = `Estação: ${estacao.nome}`;
+        horarioEstacao.textContent = `Horário: ${estacao.horario}`;
+        acessibilidadeEstacao.textContent = `Acessível: ${estacao.acessibilidade ? 'Sim' : 'Não'}`;
+        animaisEstacao.textContent = `Permite Animais: ${estacao.permiteAnimais ? 'Sim' : 'Não'}`;
+        tarifaEstacao.textContent = `Tarifa: R$ ${estacao.tarifa.toFixed(2)}`;
+        popupEstacao.style.display = 'flex';
+    }
+
+    // Carregar estações ao iniciar
+    carregarEstacoes();
+
+    // Evento para fechar o popup de informações
+    document.querySelector('.popupInformacoesEstacoes .close').addEventListener('click', function () {
+        popupEstacao.style.display = 'none';
     });
 
-
-document.addEventListener('DOMContentLoaded', function () {
-const selectEstacoes = document.getElementById('selectEstacoes'); // Select de estações
-const botaoConsulte = document.getElementById('consulte'); // Botão "Consulte"
-const popup = document.getElementById('popupEstacao'); // Popup de informações
-const closeButton = popup.querySelector('.close'); // Botão de fechar a popup
-
-// Elementos dentro da popup para exibir as informações
-const nomeEstacao = document.getElementById('nomeEstacao');
-const horarioEstacao = document.getElementById('horarioEstacao');
-const acessibilidadeEstacao = document.getElementById('acessibilidadeEstacao');
-const animaisEstacao = document.getElementById('animaisEstacao');
-const tarifaEstacao = document.getElementById('tarifaEstacao');
-
-// Função para preencher o select com as estações
-function preencherSelect(selectElement) {
-    estacoes.forEach((estacao) => {
-        const option = document.createElement('option');
-        option.value = estacao.nome;
-        option.textContent = estacao.nome;
-        selectElement.appendChild(option);
+    // Evento para calcular a rota entre origem e destino
+    botaoCalcularRota.addEventListener('click', () => {
+        const origem = selectOrigem.value;
+        const destino = selectDestino.value;
+        if (origem && destino && origem !== destino) {
+            alert(`Rota de ${origem} para ${destino} calculada!`);
+        } else {
+            alert('Por favor, selecione uma origem e um destino diferentes.');
+        }
     });
-}
 
-// Função para abrir a popup com as informações da estação selecionada
-function abrirPopup() {
-const estacaoSelecionada = estacoes.find(
-    (estacao) => estacao.nome === selectEstacoes.value
-);
+    // Evento para exibir informações da estação selecionada
+    botaoConsulte.addEventListener('click', async () => {
+        const selectEstacoes = document.getElementById('selectEstacoes');
+        const estacaoSelecionada = selectEstacoes.value;
+        const estacao = await fetch(`http://localhost:3000/api/estacoes`)
+            .then(res => res.json())
+            .then(data => data.find(estacao => estacao.nome === estacaoSelecionada));
 
-if (estacaoSelecionada) {
-    nomeEstacao.textContent = `Estação: ${estacaoSelecionada.nome}`;
-    horarioEstacao.textContent = `Horário: ${estacaoSelecionada.horario}`;
-    acessibilidadeEstacao.textContent = `Acessível: ${
-    estacaoSelecionada.acessibilidade ? 'Sim' : 'Não'
-    }`;
-    animaisEstacao.textContent = `Permite Animais: ${
-    estacaoSelecionada.permiteAnimais ? 'Sim' : 'Não'
-    }`;
-    tarifaEstacao.textContent = `Tarifa: R$ ${estacaoSelecionada.tarifa.toFixed(2)}`;
-
-    popup.style.display = 'flex'; // Exibe a popup
-}
-}
-
-// Fechar a popup ao clicar no botão de fechar
-closeButton.addEventListener('click', function () {
-popup.style.display = 'none';
-});
-
-// Abrir a popup ao clicar no botão "Consulte"
-botaoConsulte.addEventListener('click', abrirPopup);
-
+        if (estacao) {
+            abrirPopup(estacao);
+        } else {
+            alert('Estação não encontrada.');
+        }
+    });
 });
