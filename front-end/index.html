@@ -6,155 +6,131 @@
     <title>CPTM Go</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <!-- Início header -->
-    <header>
+    <body>
+        <!-- Início header -->
+        <header>
 
-        <!-- Início menu sandwich -->
-        <img src="./assets/icones/iconeMenuSandwich.png" id="menuSandwich">
-        <!-- Fim menu sandwith -->
+            <!-- Início menu sandwich -->
+            <img src="./assets/icones/iconeMenuSandwich.png" id="menuSandwich">
+            <!-- Fim menu sandwith -->
 
-        <!-- Início logo CPTM -->
-         <img src="./assets/icones/logoCPTM.png" id="logoCPTM">
-        <!-- Fim logo CPTM -->
+            <!-- Início logo CPTM -->
+            <img src="./assets/icones/logoCPTM.png" id="logoCPTM">
+            <!-- Fim logo CPTM -->
 
-        <!-- Início perfil -->  
-        <img src="./assets/icones/iconePerfil.png" id="perfil">
-        <!-- Fim perfil -->
-    </header>
-    <!-- Fim header -->
+            <!-- Início perfil -->  
+            <img src="./assets/icones/iconePerfil.png" id="perfil">
+            <!-- Fim perfil -->
+        </header>
+        <!-- Fim header -->
 
-
-    <!-- Início menu Planeje Sua Viagem -->
-    <div class="menuPlanejeSuaViagem">
-        <div class="containerPlanejeSuaViagem">
-            <div class="conteinerOrigem" id="conteinerOrigem">
-                <label class="whiteButton">Origem:</label>
-                    <select>
-                        <!-- <option value="estacao1">São Paulo - Morumbi</option>
-                        <option value="estacao2">Butantã</option>
-                        <option value="estacao3">Faria Lima</option> -->
-                    </select>
+        <!-- Início menu Planeje Sua Viagem -->
+        <div class="menuPlanejeSuaViagem">
+            <div class="containerPlanejeSuaViagem">
+                <div class="conteinerOrigem" id="conteinerOrigem">
+                    <label class="whiteButton">Origem:</label>
+                    <select id="selectOrigem"></select>
+                </div>
+                <div class="conteinerDestino" id="conteinerDestino">
+                    <label class="whiteButton">Destino:</label>
+                    <select id="selectDestino"></select>
+                </div>
             </div>
-            <div class="conteinerDestino" id="conteinerDestino">
-                <label class="whiteButton">Destino:</label>
-            <select>
-                <!-- <option value="estacao1">São Paulo - Morumbi</option>
-                <option value="estacao2">Butantã</option>
-                <option value="estacao3">Faria Lima</option> -->
-            </select>
-            </div>
+            <input class="dateButton" type="date">
+            <button class="redButton" id="calcularRota">Planeje Sua Viagem</button>
+        </div>
+
+
+        <div class="containerInformacoesSobreEstacoes">
+            <label id="infoEstacoesLabel" class="whiteButton">Informações Sobre Estações:</label>
+            <select id="selectEstacoes"></select>
+            <button class="redButton" id="consulte">Consulte</button>
+        </div>
+
+        <div class="popupInformacoesEstacoes" id="popupEstacao">
+            <span class="close">&times;</span>
+            <div class="redContainer" id="nomeEstacao"></div>
+            <div class="whiteContainer" id="horarioEstacao"></div>
+            <div class="whiteContainer" id="acessibilidadeEstacao"></div>
+            <div class="whiteContainer" id="animaisEstacao"></div>
+            <div class="whiteContainer" id="tarifaEstacao"></div>
+        </div>
+
+
+        <!-- Início mapa CPTM -->
+        <div class="mapa">
+            <img src="./assets/icones/mapaCPTM.png">
+        </div>
+        <!-- Fim mapa CPTM -->
             
+
+        <!-- Início contatos -->
+        <div class="containerContatos">
+            <div>
+                <h5>0800 055 0121</h5>
+                <h6>Telefone 0800</h6>
+            </div>
+            <div>
+                <h5>(11) 9 9767 7030</h5>
+                <h6>Whatsapp</h6>
+            </div>
+            <div>
+                <h5>(11) 3117 7094</h5>
+                <h6>Ouvidoria</h6>
+            </div>
         </div>
+        <!-- Fim contatos -->
 
-        <!-- Menu de datas -->
-        <input class="dateButton" type="date">
-
-        <!-- Botão planeje sua viagem -->
-        <a href="indexInformacoes.html">
-            <button class="redButton">Planeje Sua Viagem</button>
-        </a>
-    </div>
-    <!-- Fim menu Planeje Sua Viagem -->
-
-
-    <!-- Início menu Informações Sobre Estações -->
-    <div class="containerInformacoesSobreEstacoes">
-        <label id="infoEstacoesLabel" class="whiteButton">Informações Sobre Estações:</label>
-        <select id="selectEstacoes"></select>
-        <!-- <select>
-            <option value="estacao1">São Paulo - Morumbi</option>
-            <option value="estacao2">Butantã</option>
-            <option value="estacao3">Faria Lima</option>
-        </select> -->
-        <button class="redButton" id="consulte">Consulte</button>
-    </div>
-    <div class="popupInformacoesEstacoes" id="popupEstacao">
-        <span class="close">&times;</span>
-        <div class="redContainer" id="nomeEstacao"></div>
-        <div class="whiteContainer" id="horarioEstacao"></div>
-        <div class="whiteContainer" id="acessibilidadeEstacao"></div>
-        <div class="whiteContainer" id="animaisEstacao"></div>
-        <div class="whiteContainer" id="tarifaEstacao"></div>
-    </div>
-    <!-- Fim menu Informações Sobre Estações -->
+        <!-- Início redes sociais -->
+        <div class="redesSociais">
+            <img src="./assets/icones/iconeInstagram.png">
+            <img src="./assets/icones/iconeFacebook.png">
+            <img src="./assets/icones/iconeTikton.png">
+            <img src="./assets/icones/iconeYoutube.png">
+            <img src="./assets/icones/iconeLinkedin.png">
+        </div>
+        <!-- Fim redes sociais -->
 
 
-    <!-- Início mapa CPTM -->
-    <div class="mapa">
-        <img src="./assets/icones/mapaCPTM.png">
-    </div>
-    <!-- Fim mapa CPTM -->
+        <!-- Início botão Entre Em Contato -->
+        <div class="contactButton">
+            <button class="redButton" id="entreEmContato">Entre em contato</button>
+        </div>
+        <div class="popupEntreEmContato">
+            <span class="close">&times;</span>
+            <div class="redContainer">Entre Em Contato</div>
+            <div class="formulario">
+                <form>
+                    <input type="text" name="name" placeholder="Name">
+                </form>
+            </div>
+            <div class="formulario">
+                <form>
+                    <input type="text" name="email" placeholder="Email">
+                </form>
+            </div>
+            <div class="formulario">
+                <form>
+                    <input type="text" name="telefone" placeholder="Telefone">
+                </form>
+            </div>
+            <div class="formulario">
+                <form>
+                    <input type="text" name="mensagem" placeholder="Escreva aqui sua mensagem" id="mensagem">
+                </form>
+            </div>
+            <div class="redButton" id="enviar">Enviar</div>
+        </div>
+        <!-- Fim botão Entre Em Contato -->
+
+
+        <!-- Início footer -->
+        <footer>
+            <h6>Copyright © CPTM Companhia Paulista de Trens Metropolitanos 2015 - 2023</h6>
+        </footer>
+        <!-- Fim footer -->
         
-
-    <!-- Início contatos -->
-    <div class="containerContatos">
-        <div>
-            <h5>0800 055 0121</h5>
-            <h6>Telefone 0800</h6>
-        </div>
-        <div>
-            <h5>(11) 9 9767 7030</h5>
-            <h6>Whatsapp</h6>
-        </div>
-        <div>
-            <h5>(11) 3117 7094</h5>
-            <h6>Ouvidoria</h6>
-        </div>
-    </div>
-    <!-- Fim contatos -->
-
-    <!-- Início redes sociais -->
-    <div class="redesSociais">
-        <img src="./assets/icones/iconeInstagram.png">
-        <img src="./assets/icones/iconeFacebook.png">
-        <img src="./assets/icones/iconeTikton.png">
-        <img src="./assets/icones/iconeYoutube.png">
-        <img src="./assets/icones/iconeLinkedin.png">
-    </div>
-    <!-- Fim redes sociais -->
-
-
-    <!-- Início botão Entre Em Contato -->
-    <div class="contactButton">
-        <button class="redButton" id="entreEmContato">Entre em contato</button>
-    </div>
-    <div class="popupEntreEmContato">
-        <span class="close">&times;</span>
-        <div class="redContainer">Entre Em Contato</div>
-        <div class="formulario">
-            <form>
-                <input type="text" name="name" placeholder="Name">
-            </form>
-        </div>
-        <div class="formulario">
-            <form>
-                <input type="text" name="email" placeholder="Email">
-            </form>
-        </div>
-        <div class="formulario">
-            <form>
-                <input type="text" name="telefone" placeholder="Telefone">
-            </form>
-        </div>
-        <div class="formulario">
-            <form>
-                <input type="text" name="mensagem" placeholder="Escreva aqui sua mensagem" id="mensagem">
-            </form>
-        </div>
-        <div class="redButton" id="enviar">Enviar</div>
-    </div>
-    <!-- Fim botão Entre Em Contato -->
-
-
-    <!-- Início footer -->
-    <footer>
-        <h6>Copyright © CPTM Companhia Paulista de Trens Metropolitanos 2015 - 2023</h6>
-    </footer>
-    <!-- Fim footer -->
-    
-    <!-- Importando o script ao final do body -->
-    <script type="module" src="./script.js"></script>
-</body>
-<script src="script.js"></script>
+        <!-- Importando o script ao final do body -->
+        <script type="module" src="./script.js"></script>
+    </body>
 </html>
