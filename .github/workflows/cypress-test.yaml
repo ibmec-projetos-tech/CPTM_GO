@@ -19,4 +19,5 @@ jobs:
             - name: Rodando npm install e npm test
               run: |
                 npm install
+                node back-end/api.js
                 npx cypress run
