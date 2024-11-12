@@ -16,8 +16,11 @@ jobs:
                 node-version: 22.x
                 cache: 'npm'
                 
-            - name: Rodando npm install e npm test
+            - name: Rodando npm install e iniciando back-end
               run: |
                 npm install
-                node back-end/api.js
-                npx cypress run
+                nohup node back-end/api.js &
+                sleep 5
+
+            - name: Rodando testes
+              run: npx cypress run
